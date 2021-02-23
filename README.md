@@ -78,6 +78,11 @@ This prototype used a 50-ohm attenuator.
 phyton request_disconnection.py -i <RaspberryPi IP> -p <RaspberryPi Port> -t <Disconnection time>
 ```
 
+How to cite
+----
+If you decided to use this prototype, please, refer to it as:
+
+-  P. H. L. Rettore, J. Loevenich, R. R. F. Lopes, P. Sevenich, "TNT: A Tactical Network Test platform to evaluate military systems over ever-changing scenarios" in IEEE/ACM Transactions on Networking, vol. X, pp. XXX, 2021, doi: XXX.
 
 Publications
 ----
