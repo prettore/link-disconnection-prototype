@@ -24,7 +24,7 @@ The Link Disconnection Prototype is composed by:
   - Controller
     - a Raspberry PI 3
     - a step-up device (`DC-DC Converter 5V to 12V`)
-    - a switch circuit (`transistor`)
+    - a switch circuit (`transistor and resistor`)
     - server script (`disconnection_server.py`)
   - Coaxial relay (`cx-230l`)
   - Attenuator (`50 ohm`)
