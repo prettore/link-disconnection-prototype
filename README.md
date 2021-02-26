@@ -46,7 +46,7 @@ This prototype used the DC 100W 6A 3-35V to 3-35V Boost Step-up with LED Voltmet
 
 #### Circuit
 
-Using a transistor (NPN) and resistor (X ohm) we can activate/deactivate the 
+Using a transistor (bc517 NPN) and resistor (226M Ohms 2%) we can activate/deactivate the 
 step-up module and as a consequence the RF relay. See the prototype scheme.
 
 #### Server script
