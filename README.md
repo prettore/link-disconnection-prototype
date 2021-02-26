@@ -46,7 +46,7 @@ This prototype used the DC 100W 6A 3-35V to 3-35V Boost Step-up with LED Voltmet
 
 #### Circuit
 
-Using a transistor (NPN) and resistor (X ohm) we can activate/deactivate the 
+Using a transistor (bc517 NPN) and resistor (226M Ohms 2%) we can activate/deactivate the 
 step-up module and as a consequence the RF relay. See the prototype scheme.
 
 #### Server script
@@ -92,6 +92,13 @@ Publications
 - R. R. F. Lopes, J. Loevenich, P. H. L. Rettore, S. M. Eswarappa and P. Sevenich, "Quantizing Radio Link Data Rates to Create Ever-Changing Network Conditions in Tactical Networks," in IEEE Access, vol. 8, pp. 188015-188035, 2020, doi: 10.1109/ACCESS.2020.3027797.
 
 - R. Rigolin Ferreira Lopes, P. Hanavadi Balaraju, P. H. Lopes Rettore and P. Sevenich, "Queuing over Ever-changing Communication Scenarios in Tactical Networks," in IEEE Transactions on Mobile Computing, doi: 10.1109/TMC.2020.3005737.
+
+Contacts
+----
+
+paulo.lopes.rettore@fkie.fraunhofer.de
+
+roberto.lopes@fkie.fraunhofer.de
 
 License
 ----
