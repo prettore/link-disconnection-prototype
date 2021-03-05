@@ -82,7 +82,7 @@ How to cite
 ----
 If you decided to use this prototype, please, refer to it as:
 
--  P. H. L. Rettore, J. Loevenich, R. R. F. Lopes, P. Sevenich, "TNT: A Tactical Network Test platform to evaluate military systems over ever-changing scenarios" in IEEE/ACM Transactions on Networking, vol. X, pp. XXX, 2021, doi: XXX.
+-  Rettore, Paulo H.; Loevenich, Johannes; Rigolin F. Lopes, Roberto; Sevenich, Peter (2021): "TNT: A Tactical Network Test platform to evaluate military systems over ever-changing scenarios", in IEEE/ACM Transactions on Networking, TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.14141501.v1 
 
 Publications
 ----
