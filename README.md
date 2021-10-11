@@ -1,10 +1,3 @@
----
-Link Disconnection Prototype
-
-Authors: Paulo H. L. Rettore and Roberto Rigolin F. Lopes 
-
----
-
 # Link Disconnection Prototype 
 [![N|Solid](https://www.fkie.fraunhofer.de/content/dam/fkie/fkie.svg)](https://www.fkie.fraunhofer.de)
 
