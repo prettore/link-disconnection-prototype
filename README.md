@@ -31,13 +31,10 @@ Finally, in line 9, the client sleeps for the given time window (trace.time) cor
 Algorithm 2 explains the program implemented on the server-side to listen to disconnection requests. 
 After the initialization in line 1, lines 2-3 define the motherboard  model  and  the 23rd General  Purpose  Input/Output(GPIO) pin is set for output. 
 In Lines 4 and 5, a socket is bound to the Raspberry port and listens for connection requests from the  client.  
-If  there  has  been  a  request  (line  6),  a  connection is  established  in  line  7.  
-If  the  connection  establishment  was successful  (line  8),  then  the  time  interval(t) is  received  from the  client  (trace.time)  in  line  9.  
-The  current  time  is  saved as the start time of the disconnection (startTime) in line 10. 
-GPIO  is  set  high  to  start  the  relay,  which  causes  the  cable disconnection  (line  11).  
+If  there  has  been  a  request  (line  6),  a  connection is  established  in  line  7. If  the  connection  establishment  was successful  (line  8),  then  the  time  interval(t) is  received  from the  client  (trace.time)  in  line  9.  
+The  current  time  is  saved as the start time of the disconnection (startTime) in line 10. GPIO  is  set  high  to  start  the  relay,  which  causes  the  cable disconnection  (line  11).  
 The 16th pin  port  in  the  assembly architecture is GPIO23. The disconnection is continued in line 12  for  the  specified  time  interval(t).  
-GPIO  is  set  low  to  stop the relay, which causes the connection re-establishment in line 13. 
-The current time marks the end of the disconnection time(endTime) in line 14. The time interval of the disconnection is  calculated  in  line  15  (endTime−startTime)  and  
+GPIO  is  set  low  to  stop the relay, which causes the connection re-establishment in line 13. The current time marks the end of the disconnection time(endTime) in line 14. The time interval of the disconnection is  calculated  in  line  15  (endTime−startTime)  and  
 this information is sent back to the client in line 16.
 
 [![N|Solid](img/algo2.png)]()
