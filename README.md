@@ -14,7 +14,41 @@ through a low-cost device, allowing the conduction of experiments, to test milit
 The prototype consists of a relay connected to the coaxial cable of the link between the radios. 
 Moreover, the relay needs 12v to work, requiring the use of an adjustable converter module for step-up boost power supply converting 5v to 12v. 
 In addition, there is a circuit with a transistor and resistor to open/close the electric pulse and activate the converter module. 
-An attenuator also can be used in order to increase the signal resistance provided by the radios and making the relay work properly.
+An attenuator also can be used in order to increase the signal resistance provided by the radios and making the relay work properly. 
+Finally, the Raspberry-Pi acts as a controller to deactivate/activate the relay in a specified time interval, causing connection/disconnection, respectively. 
+
+# General algorithm explanation 
+
+The changes on the network can be done by using the mobility trace as input and two different interfaces depending on the node state (i) connected: 
+the interface with the radio (to change its modulation) and (ii) disconnected: the interface with the link disconnection prototype (to 'cut' the wired antenna using a relay). 
+If the network state is '0', the script sends a message to the controller to disconnect the link. 
+Otherwise, a different action could take place such as the change the radio link data rate. 
+Algorithm 1 shows the pseudo-code describing these actions supposing that each node has its trace file containing the states ('connected' or 'disconnected'). 
+After the necessary initialization in line 1, the trace file is read in line 2 and the node time-series and its correspondent states are extracted. 
+Then, the time interval between observations is computed and saved (trace). 
+For each node observation (line 3) a condition (lines 4 and 7) determines which procedure will be performed next. 
+If the node state is 0, then a socket is created to connect to the disconnection controller using the IP address and the port number (line 5). 
+After the link disconnection, the client receives data from the server unlocking the client to go to the next network state. 
+If the node state is not 0, then, the radio modulation will be changed (line 8). 
+The function to set the radio data rate uses as parameters the radio IP, radio port, and the network state (trace.state). 
+Finally, in line 9, the client sleeps for the given time window (trace.time) corresponding to the node mobility, for instance, and the process starts again to set the next network state or to finish the test.
+
+[![N|Solid](img/algo1.png)]() 
+
+Algorithm 2 explains the program implemented on the server-side to listen to disconnection requests. 
+After the initialization in line 1, lines 2-3 define the motherboard  model  and  the 23rd General  Purpose  Input/Output(GPIO) pin is set for output. 
+In Lines 4 and 5, a socket is bound to the Raspberry port and listens for connection requests from the  client.  
+If  there  has  been  a  request  (line  6),  a  connection is  established  in  line  7.  
+If  the  connection  establishment  was successful  (line  8),  then  the  time  interval(t) is  received  from the  client  (trace.time)  in  line  9.  
+The  current  time  is  saved as the start time of the disconnection (startTime) in line 10. 
+GPIO  is  set  high  to  start  the  relay,  which  causes  the  cable disconnection  (line  11).  
+The 16th pin  port  in  the  assembly architecture is GPIO23. The disconnection is continued in line 12  for  the  specified  time  interval(t).  
+GPIO  is  set  low  to  stop the relay, which causes the connection re-establishment in line 13. 
+The current time marks the end of the disconnection time(endTime) in line 14. The time interval of the disconnection is  calculated  in  line  15  (endTime−startTime)  and  
+this information is sent back to the client in line 16.
+
+[![N|Solid](img/algo2.png)]()
+
 
 # The prototype components!
 
